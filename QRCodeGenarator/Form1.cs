@@ -117,8 +117,6 @@ namespace QRCodeGenarator
 
             graphics.DrawImage(pictureBoxQR.Image, 0, 0, 76, 76);
             if (pictureBoxBarCode.Image != null) graphics.DrawImage(pictureBoxBarCode.Image, 76, 0, 36, 76);
-
-
         }
 
         private void setLogo_CheckedChanged_1(object sender, EventArgs e)
