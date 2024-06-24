@@ -45,14 +45,17 @@ namespace QRCodeGenarator
         {
             if (keyBarCode.Text.Length == 8)
             {
+                keyBarCode.Enabled = false;
                 valueBarCode_TextChanged(this, EventArgs.Empty);
             }
         }
 
         private async void valueBarCode_TextChanged(object sender, EventArgs e)
         {
+            valueBarCode.Enabled = true;
             valueBarCode.Focus();
             await Task.Delay(1500);
+            valueBarCode.Enabled = false;
             QRGeneratorButton_Click(this, EventArgs.Empty);
         }
 
@@ -68,12 +71,6 @@ namespace QRCodeGenarator
                 QRCodeData qrCodeData = qrGenerator.CreateQrCode("{\n\tkey: " + keyBarCode.Text + "\n\n" + "\tvalue: " + valueBarCode.Text + "\n}", QRCodeGenerator.ECCLevel.Q);
                 QRCode qrCode = new QRCode(qrCodeData);
                 pictureBoxQR.Image = qrCode.GetGraphic(3);
-
-                if (pictureBoxQR.Size.Height > baseQRSize.Height)
-                {
-                    printButtonClick.Location = new Point(printButtonClick.Location.X, printButtonClick.Location.Y + (pictureBoxBarCode.Size.Height / 10 + 5));
-                    pictureBoxQR.Location = new Point(pictureBoxQR.Location.X - (pictureBoxBarCode.Size.Width % 10), pictureBoxQR.Location.Y);
-                }
 
                 pictureBoxBarCode.Height = pictureBoxQR.Height;
                 pictureBoxBarCode.Location = new Point(pictureBoxQR.Location.X + pictureBoxQR.Width, pictureBoxQR.Location.Y); //here
@@ -107,8 +104,9 @@ namespace QRCodeGenarator
                 await Task.Delay(1000);
                 keyBarCode.Text = "";
                 valueBarCode.Text = "";
+                keyBarCode.Enabled = true;
+                valueBarCode.Enabled = true;
                 keyBarCode.Focus();
-
             }
         }
         private void PrintPageHandler(object sender, PrintPageEventArgs e)

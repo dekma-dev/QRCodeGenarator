@@ -32,9 +32,7 @@
             keyBarCode = new TextBox();
             textBoxLabel = new Label();
             pictureBoxLabel = new Label();
-            QRGeneratorButton = new Button();
             pictureBoxQR = new PictureBox();
-            printButtonClick = new Button();
             pictureBoxBarCode = new PictureBox();
             label1 = new Label();
             valueBarCode = new TextBox();
@@ -80,17 +78,6 @@
             pictureBoxLabel.TabIndex = 3;
             pictureBoxLabel.Text = "QR";
             // 
-            // QRGeneratorButton
-            // 
-            QRGeneratorButton.Location = new Point(12, 71);
-            QRGeneratorButton.Name = "QRGeneratorButton";
-            QRGeneratorButton.Size = new Size(167, 59);
-            QRGeneratorButton.TabIndex = 5;
-            QRGeneratorButton.Text = "Сгенерировать QR";
-            QRGeneratorButton.UseVisualStyleBackColor = true;
-            QRGeneratorButton.Visible = false;
-            QRGeneratorButton.Click += QRGeneratorButton_Click;
-            // 
             // pictureBoxQR
             // 
             pictureBoxQR.Location = new Point(433, 143);
@@ -101,17 +88,6 @@
             pictureBoxQR.TabIndex = 0;
             pictureBoxQR.TabStop = false;
             pictureBoxQR.Click += pictureBoxQR_Click;
-            // 
-            // printButtonClick
-            // 
-            printButtonClick.Location = new Point(12, 12);
-            printButtonClick.Name = "printButtonClick";
-            printButtonClick.Size = new Size(110, 53);
-            printButtonClick.TabIndex = 7;
-            printButtonClick.Text = "Печать";
-            printButtonClick.UseVisualStyleBackColor = true;
-            printButtonClick.Visible = false;
-            printButtonClick.Click += chosePrinter_Click;
             // 
             // pictureBoxBarCode
             // 
@@ -136,6 +112,7 @@
             // 
             // valueBarCode
             // 
+            valueBarCode.Enabled = false;
             valueBarCode.Location = new Point(135, 441);
             valueBarCode.Name = "valueBarCode";
             valueBarCode.Size = new Size(753, 30);
@@ -259,8 +236,6 @@
             Controls.Add(valueBarCode);
             Controls.Add(pictureBoxBarCode);
             Controls.Add(pictureBoxQR);
-            Controls.Add(printButtonClick);
-            Controls.Add(QRGeneratorButton);
             Controls.Add(pictureBoxLabel);
             Controls.Add(textBoxLabel);
             Controls.Add(keyBarCode);
@@ -281,7 +256,6 @@
         private TextBox keyBarCode;
         private Label textBoxLabel;
         private Label pictureBoxLabel;
-        private Button QRGeneratorButton;
         private PictureBox pictureBoxQR;
         private PictureBox pictureBoxBarCode;
         private Label label1;
@@ -289,7 +263,6 @@
         private Label label2;
         private RadioButton setLogo;
         private RadioButton setSign;
-        public Button printButtonClick;
         private ListBox listTitle;
         private RadioButton setNothing;
         private ImageList imageList1;
