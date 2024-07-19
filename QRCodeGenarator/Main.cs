@@ -257,10 +257,6 @@ namespace QRCodeGenarator
             listTitles_SelectedIndexChanged(this, null);
         }
 
-        private void Form1_Load(object sender, EventArgs e) { }
-        private void pictureBoxQR_Click(object sender, EventArgs e) { }
-        private void pictureBoxGetBarCode_Paint(object sender, PaintEventArgs e) { }
-
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.J && e.Control)
@@ -324,5 +320,9 @@ namespace QRCodeGenarator
 
             serialNumberTextBox.SelectAll();
         }
+
+        private void Form1_Load(object sender, EventArgs e) { }
+        private void pictureBoxQR_Click(object sender, EventArgs e) { }
+        private void pictureBoxGetBarCode_Paint(object sender, PaintEventArgs e) { }
     }
 }

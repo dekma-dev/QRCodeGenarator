@@ -23,14 +23,6 @@ namespace QRCodeGenarator
             command.CommandText = $"SELECT * FROM {tableTB.Text}";
             NpgsqlDataReader reader = command.ExecuteReader();
 
-            //if (reader.HasRows)
-            //{
-            //    DataTable data = new DataTable();
-            //    data.Load(reader);
-            //      dataGridView1.DataSource = data;
-            //      dataGridView1.Update();
-            //      dataGridView1.Refresh();
-            //}
             command.Dispose();
             conn.Close();
         }
